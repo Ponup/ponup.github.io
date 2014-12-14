@@ -1,0 +1,9 @@
+# Site settings
+title: Ponup Games 
+description: Ponup Games is an indie development company with games published for all platforms (mobile + desktop ).
+baseurl: ""
+url: "http://ponup.com"
+
+# Build settings
+markdown: kramdown
+

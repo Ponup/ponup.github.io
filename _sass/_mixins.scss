@@ -1,0 +1,170 @@
+
+@mixin border-radius(    $radius:5px) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+          border-radius: $radius;
+          // keeps background from busting out of border
+  -webkit-background-clip: padding-box;
+     -moz-background-clip: padding;
+          background-clip: padding-box;
+}
+@mixin transform($transform){
+     -webkit-transform: $transform;
+         -ms-transform: $transform;
+        -moz-transform: $transform;
+          -o-transform: $transform;
+             transform: $transform;
+}
+
+@mixin transition(    $time:.2s) {
+  -webkit-transition: $time;
+     -moz-transition: $time;
+      -ms-transition: $time;
+          transition: $time;
+}
+@mixin text-shadow( $shadow:0px 2px 0px rgba($cNegro, .1)){
+    -webkit-text-shadow: $shadow;
+       -moz-text-shadow: $shadow;
+         -o-text-shadow: $shadow;
+            text-shadow: $shadow;
+}
+
+@mixin box-shadow(      $shadow: 0px 3px 0px rgba($cNegro, .1) ){
+            box-shadow: $shadow;
+        -ms-box-shadow: $shadow;
+       -moz-box-shadow: $shadow;
+     -opera-box-shadow: $shadow;
+    -webkit-box-shadow: $shadow;
+}
+
+@mixin opacity (    $opacity: 0.5 ) {
+          opacity: $opacity;
+   -khtml-opacity: $opacity;
+     -moz-opacity: $opacity;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=" $opacity * 100 ")";
+  filter: alpha(opacity= $opacity * 100 );
+}
+
+@mixin transform-origin($value: center center){
+    -webkit-transform-origin: $value;
+       -moz-transform-origin: $value;
+        -ms-transform-origin: $value;
+         -o-transform-origin: $value;
+            transform-origin: $value;
+}
+
+@mixin animation ($delay, $duration, $animation) {
+    -webkit-animation-delay: $delay;
+    -webkit-animation-duration: $duration;
+    -webkit-animation-name: $animation;
+    -webkit-animation-fill-mode: forwards; /* this prevents the animation from restarting! */
+
+    -moz-animation-delay: $delay;
+    -moz-animation-duration: $duration;
+    -moz-animation-name: $animation;
+    -moz-animation-fill-mode: forwards; /* this prevents the animation from restarting! */
+
+    -o-animation-delay: $delay;
+    -o-animation-duration: $duration;
+    -o-animation-name: $animation;
+    -o-animation-fill-mode: forwards; /* this prevents the animation from restarting! */
+
+    animation-delay: $delay;
+    animation-duration: $duration;
+    animation-name: $animation;
+    animation-fill-mode: forwards; /* this prevents the animation from restarting! */
+}
+
+@mixin hide-text{
+    font: 0/0 a;
+    text-shadow: none;
+    color: transparent;
+}
+
+@mixin keyframes($name) {
+  @-webkit-keyframes #{$name} {
+    @content;
+  }
+  @-moz-keyframes #{$name} {
+    @content;
+  }
+  @-ms-keyframes #{$name} {
+    @content;
+  }
+  @keyframes #{$name} {
+    @content;
+  }
+}
+
+@mixin blur($value:10px) {
+     -webkit-filter: blur($value);
+        -moz-filter: blur($value);
+          -o-filter: blur($value);
+         -ms-filter: blur($value);
+             filter: blur($value);
+}
+
+@mixin linear-gradient($top, $bottom){
+    background: $top; /* Old browsers */
+    background: -moz-linear-gradient(top,  $top 0%, $bottom 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,$top), color-stop(100%,$bottom)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  $top 0%,$bottom 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  $top 0%,$bottom 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  $top 0%,$bottom 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  $top 0%,$bottom 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$top', endColorstr='$bottom',GradientType=0 ); /* IE6-9 */
+}
+
+$pos1 : 0%;
+$pos2 : 60%;
+@mixin radial-gradient($from, $to) {
+    background: $from;
+    background: -moz-radial-gradient(center, ellipse cover, $from $pos1, $to $pos2);
+    background: -webkit-gradient(radial, center center, $pos1, center center, $pos2, color-stop($pos1, $from), color-stop($pos2, $to));
+    background: -webkit-radial-gradient(center, ellipse cover, $from $pos1, $to $pos2);
+    background: -o-radial-gradient(center, ellipse cover, $from $pos1, $to $pos2);
+    background: -ms-radial-gradient(center, ellipse cover, $from $pos1, $to $pos2);
+    background: radial-gradient(ellipse at center, $from $pos1, $to $pos2);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$from', endColorstr='#f6bb43', GradientType=1 );
+}
+
+@mixin dots ($color, $color2, $size:70px){
+  background: $color;
+  background-image: radial-gradient(rgba($color2,.4) 40%, transparent 40%);
+  background-size:$size $size;
+  background-position: 0 0;
+}
+/* scrollbar */
+@mixin scrollbar($width:15px, $height: 15px, $top: 0px, $bottom:0px, $color: #fff) {
+  ::-webkit-scrollbar {width: $width; height: $height; z-index: 99999; }
+  ::-webkit-scrollbar-track {background: rgba($color, 0.1); margin-top: $top; margin-bottom: $bottom; }
+  ::-webkit-scrollbar-thumb {background: rgba($color, 0.5); }
+  ::-webkit-scrollbar-thumb:hover {background: rgba($color, 0.7); }
+  ::-webkit-scrollbar-thumb:active {background: $color; }
+
+  ::-moz-scrollbar {width: $width; height: $height; z-index: 99999; }
+  ::-moz-scrollbar-track {background: rgba($color, 0.1); margin-top: $top; margin-bottom: $bottom; }
+  ::-moz-scrollbar-thumb {background: rgba($color, 0.5); }
+  ::-moz-scrollbar-thumb:hover {background: rgba($color, 0.7); }
+  ::-moz-scrollbar-thumb:active {background: $color; }
+
+  ::-ms-scrollbar {width: $width; height: $height; z-index: 99999; }
+  ::-ms-scrollbar-track {background: rgba($color, 0.1); margin-top: $top; margin-bottom: $bottom; }
+  ::-ms-scrollbar-thumb {background: rgba($color, 0.5); }
+  ::-ms-scrollbar-thumb:hover {background: rgba($color, 0.7); }
+  ::-ms-scrollbar-thumb:active {background: $color; }
+
+  ::-o-scrollbar {width: $width; height: $height; z-index: 99999; }
+  ::-o-scrollbar-track {background: rgba($color, 0.1); margin-top: $top; margin-bottom: $bottom; }
+  ::-o-scrollbar-thumb {background: rgba($color, 0.5); }
+  ::-o-scrollbar-thumb:hover {background: rgba($color, 0.7); }
+  ::-o-scrollbar-thumb:active {background: $color; }
+
+  ::scrollbar {width: $width; height: $height; z-index: 99999; }
+  ::scrollbar-track {background: rgba($color, 0.1); margin-top: $top; margin-bottom: $bottom; }
+  ::scrollbar-thumb {background: rgba($color, 0.5); }
+  ::scrollbar-thumb:hover {background: rgba($color, 0.7); }
+  ::scrollbar-thumb:active {background: $color; }
+}
+

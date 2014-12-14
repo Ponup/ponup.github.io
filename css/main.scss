@@ -1,0 +1,501 @@
+---
+---
+
+@import "mixins";
+@import "colors";
+
+* {
+  -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+  box-sizing: border-box;         /* Opera/IE 8+ */
+  padding: 0; margin:0;
+}
+
+/* Space out content a bit */
+html, body {
+    color: $cBlanco;
+    height: 100%;
+    margin: 0;
+      overflow: hidden;
+  -webkit-transition: opacity 400ms;
+  -moz-transition: opacity 400ms;
+  transition: opacity 400ms;
+}
+
+
+body, .onepage-wrapper, html {
+  display: block;
+  position: static;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.barra {
+  margin: 0; padding: 0;
+  &.h1 { height: 70px; }
+  &.h2 { height: 140px; }
+} 
+
+
+
+.dots-amarillo {@include dots($cAmarillo, $cAmarilloDark); }
+.dots-esmeralda {@include dots($cEsmeralda, $cEsmeraldaDark); }
+.dots-cyan {@include dots($cCyan, $cCyanDark); }
+.dots-rojo {@include dots($cRojo, $cRojoDark); }
+.dots-blanco {@include dots($cBlanco, $cBlancoDark); }
+.dots-negro {@include dots($cIndigo, $cIndigoDark); }
+.dots-verde {@include dots($cVerde, $cVerdeDark); }
+
+// Typo
+h1,h2,h3,h4,h5,h6, strong { font-family: 'Fredoka One', cursive; }
+
+small { font-family: 'Damion', cursive; }
+#move_down {
+  position: fixed;
+  bottom:-100px;
+  left: 0; right: 0;
+  width: 38px;
+  height: 75px;
+  z-index: 550;
+  margin: auto;
+  background: url('../images/move_down.png') no-repeat;
+  @include animation(2s, 4s, moveDown);
+  animation-iteration-count: infinite;
+  -webkit-animation-iteration-count: infinite;
+  -moz-animation-iteration-count: infinite;
+  -ms-animation-iteration-count: infinite;
+  -o-animation-iteration-count: infinite;
+  @include transition();
+}
+@include keyframes(moveDown) {
+  0% ,100% { bottom: -100px; @include opacity(0);  }
+  20%,80%    { bottom: 20px;   @include opacity(1);  }
+}
+body.viewing-page-4 {
+  #move_down {  height: 0;}
+}
+#home {
+  position: relative;
+  #LogoPonupGroup {
+    margin: auto;
+    position: absolute;
+    max-width: 80%;
+    bottom: 50%; right: 0; left: 0; top: 50%;
+    @include animation(.2s, 2s, logoAnim);
+    animation-timing-function: ease-in-out;
+    -webkit-animation-timing-function: ease-in-out;
+    -o-animation-timing-function: ease-in-out;
+    -ms-animation-timing-function: ease-in-out;
+    -moz-animation-timing-function: ease-in-out;
+    @include opacity(0);
+     @include transform(scale(.9) rotate(-9deg));
+  }
+  #logo {
+    margin: auto;
+    position: absolute;
+    top: -30px; left: -10px; bottom: 0; right: 0;
+    width: 45%;
+  }
+
+  #LogoGames {
+    width: 35%;
+    margin: auto ;
+    position: absolute;
+    top: 190px; left: -10px; bottom: 0; right: 0;
+  }
+}
+@include keyframes(logoAnim){
+  to {  @include opacity(1); @include transform(scale(1) rotate(0deg));}
+}
+
+//modernizr
+.svg .mobile    { background: url('../images/mobile.svg') top; }  // modernizr check if there's svg support on browser.
+.no-svg .mobile { background: url('../images/mobile.png') top;  } // modernizr check if no-svg support on browser.
+
+#game-individual {
+  @include text-shadow();
+  position: relative;
+
+  .container,div[class*="col-"] { height: 100%; }
+  #game-content {
+    top: 400px;
+    position: absolute;
+    width: 100%;
+  }
+  #game-icon{
+      img {
+        position: absolute;
+        margin: auto;
+        width: 300px;
+        height: 300px;
+        left: 0;
+        right: 0;
+      }
+
+      display: inline-block;
+      width: 350px;
+      height: 350px;
+      background: $cIndigo;
+      @include box-shadow();
+      @include transition();
+      @include border-radius(12px);
+      position:absolute;
+      left: 9%; top: 35px; margin:auto; 
+      border-top:1px solid rgba($cBlanco, 0);
+      border-bottom:0px solid $cIndigoDark;
+      &.cyan { background: $cCyan;}
+      &.tomate { background: $cTomate;}
+      &.red { background: $cRojo;}
+      &.white { background: $cBlanco; color: $cIndigo}
+      &.pink { background: $cRosa;}
+      &.green { background: $cEsmeralda;}
+      &.violet { background: $cVioleta;}
+      &.black { background: $cIndigo;}
+      &.empty { background: $cAmarilloDark;}
+      &:after {
+        content: ' ';
+        width: 85px;height: 60px;
+        position: absolute;
+        bottom:0; left:0; right: 0;
+        margin:auto;
+        background-image: url(../images/PonupSign.png);
+        background-image: url(../images/PonupSign.svg), none;
+        background-size: cover;
+        @include transition();
+      }
+      &:hover {
+        top:20px;
+        cursor: pointer;
+        @include box-shadow(0 6px 0 rgba(0,0,0,.1));
+        border-bottom:3px solid rgba(0,0,0,.2);
+        border-top:1px solid rgba($cBlanco, .7);
+      }
+  }
+}
+
+// :::::::::::::::: COMIENZO GAMES ::::::::::::::::
+#games {
+  @include text-shadow();
+  position: relative;
+  .container,div[class*="col-"] { height: 100%; }
+}
+
+.mobile {
+    width: 348px;
+    height: 731px;
+    margin:auto;
+    position:absolute;
+    top:0%; bottom: 0%; right: 8%;
+
+    
+    .gameWindow {
+      top:105px;
+      left: 25px;
+      height: 527px;
+      width: 302px;
+      padding:20px;
+      border-top: 2px solid rgba(0,0,0,.2);
+      @include border-radius(3px);
+      position:absolute;
+      background-position: left top;
+      @include animation(1s,10s,capturesAnim);
+      animation-iteration-count: infinite;
+      -webkit-animation-iteration-count: infinite;
+      -moz-animation-iteration-count: infinite;
+      -o-animation-iteration-count: infinite;
+      -ms-animation-iteration-count: infinite;
+      @include transition();
+    }
+  }
+
+.app-icons {
+    margin:auto;
+    position:absolute;
+    list-style: none; margin: 0; padding: 0;
+    top:0; bottom:0;
+    display: -webkit-flex;
+   display: flex;
+   -webkit-align-items: center;
+   align-items: center;
+   -webkit-justify-content: center;
+   justify-content: center;
+   -webkit-flex-flow: column wrap;
+   flex-flow: column wrap;
+   -webkit-align-content: stretch;
+   align-content: stretch;
+    justify-content: center;
+     & li{
+      img {
+        position: absolute;
+        margin: auto;
+        top:15px;
+        left: 0;
+        right: 0;
+      }
+
+      display: inline-block;
+      float: left;
+      width: 150px;
+      height: 150px;
+      background: $cIndigo;
+      @include box-shadow();
+      @include transition();
+      @include border-radius(12px);
+      margin: 14px;
+      position:relative;
+      border-top:1px solid rgba($cBlanco, 0);
+      border-bottom:0px solid $cIndigoDark;
+      &.cyan { background: $cCyan;}
+      &.tomate { background: $cTomate;}
+      &.red { background: $cRojo;}
+      &.white { background: $cBlanco; color: $cIndigo}
+      &.pink { background: $cRosa;}
+      &.green { background: $cEsmeralda;}
+      &.violet { background: $cVioleta;}
+      &.black { background: $cIndigo;}
+      &.empty { background: $cAmarilloDark;}
+      &:after {
+        content: ' ';
+        width: 50px;height: 35px;
+        position: absolute;
+        bottom:0; left:0; right: 0;
+        margin:auto;
+        background-image: url(../images/PonupSign.png);
+        background-image: url(../images/PonupSign.svg), none;
+        @include transition();
+      }
+      &:hover {
+        top:-3px;
+        cursor: pointer;
+        @include box-shadow(0 6px 0 rgba(0,0,0,.1));
+        border-bottom:3px solid rgba(0,0,0,.2);
+        border-top:1px solid rgba($cBlanco, .7);
+      }
+      &.active{ border: 3px solid $cBlanco; }
+    }
+  }
+
+@include keyframes(capturesAnim){
+  0%,30%, 100%{background-position: 0px 0;}
+  33%, 60% {background-position: -402px 0;}
+  63%, 96%{background-position: -804px 0;}
+}
+// :::::::::::::::: FIN GAMES ::::::::::::::::
+
+.gameInfo {
+  width: 100%;
+  height: 30%;
+  text-align: right;
+  position: absolute;
+  margin: auto;
+  top:70%;
+  bottom:30%;
+  left:0%;
+  right: 0%;
+}
+
+#about {
+  @include text-shadow();
+  position:relative;
+  .container , div[class*="col-"] {
+    height: 100%;
+    }
+  p{
+      position: absolute;
+      display: block;
+      margin:auto;
+      top:0; bottom: -150px;
+      left:0;right: 0;
+      width:75%;
+      height: 100px;
+      font-size: 1.7em;
+      font-family: Damion, "Damion";
+    }
+    .lead {
+      font-family:'Fredoka One', 'Fredoka';
+      font-size: 1em;
+      margin-bottom: 0px;
+      display: block;
+  }
+  #about-faces {
+    list-style: none;
+    position: absolute;
+    display: block;
+    top:-240px; bottom: 0;margin:auto;
+    left:0;right: 0;
+    height: 130px;
+    & li {
+      //overflow: hidden;
+      width: 110px;
+      height: 110px;
+
+      display:inline-block;
+      @include border-radius(60px);
+      //background: $cIndigo;
+      @include box-shadow();
+      margin: 14px;
+      top:0px;
+      position:relative;
+      @include transition();
+      font-family:'Fredoka One', 'Fredoka';
+      font-size: 1.2em;
+      padding: 15px;
+      background-size:contain;
+      @include opacity(.9);
+      &:hover {
+        top:-3px;
+        cursor: pointer;
+        @include opacity(1);
+        @include box-shadow(0 6px 0 rgba(0,0,0,.2));
+        @include transform(scale(1.1));
+      }
+      span {
+        position:relative;
+        bottom:-110px;
+
+      }
+    }
+  }
+  #pablo{     background: url('../images/us/pablo.jpg') center center no-repeat ;}
+  #anna{      background: url('../images/us/anna.jpg') center center no-repeat ;}
+  #santiago{  background: url('../images/us/santiago.jpg') center center no-repeat ;}
+
+}
+#footer {
+  .container,div[class*="col-"] { height: 100%; }
+  .footer-links {
+    list-style: none;
+    list-style-type: none;
+    position: absolute;
+    display: block;
+    top:0; bottom: 0;
+    left:0;right: 0;
+    margin:auto;
+    height: 100px;
+
+    li {
+      display: inline-block;
+      margin: 4%;
+      @include transition();
+    @include opacity(.9);
+      &:hover {
+        @include transform(scale(1.5));
+        @include opacity(1);
+      }
+    }
+
+  }
+}
+
+
+@keyframes LogoGames {
+  to {
+    @include transform(scale(1));
+    @include opacity(1);
+  }
+}
+
+
+
+.hidden{
+     opacity:0;
+}
+.visible{
+     opacity:1;
+}
+
+
+/* Responsive: Portrait tablets and up */
+@media screen and (max-width: 990px) {
+  .app-icons {
+    left: 0;
+    right: 0;
+    margin: auto;
+  }
+}
+
+
+
+
+
+.onepage-wrapper {
+  width: 100%;
+  height: 100%;
+  display: block;
+  position: relative;
+  padding: 0;
+  -webkit-transform-style: preserve-3d;
+}
+
+.onepage-wrapper .section {
+  width: 100%;
+  height: 100%;
+}
+
+
+.disabled-onepage-scroll, .disabled-onepage-scroll .wrapper {
+  overflow: auto;
+}
+
+.disabled-onepage-scroll .onepage-wrapper .section {
+  position: relative !important;
+  top: auto !important;
+  left: auto !important;
+}
+.disabled-onepage-scroll .onepage-wrapper {
+  -webkit-transform: none !important;
+  -moz-transform: none !important;
+  transform: none !important;
+  -ms-transform: none !important;
+  min-height: 100%;
+}
+
+
+.disabled-onepage-scroll .onepage-pagination {
+  display: none;
+}
+
+body.disabled-onepage-scroll, .disabled-onepage-scroll .onepage-wrapper, html {
+  position: inherit;
+}
+
+// pagination
+
+.onepage-pagination {
+  position: absolute;
+  right: 15px;
+  top: 0%;
+  bottom: 0%;
+  z-index: 5;
+  list-style: none;
+  margin: auto;
+  padding: 0;
+  height: 105px;
+}
+.onepage-pagination li {
+  padding: 0;
+  text-align: center;
+}
+.onepage-pagination li a{
+  padding: 12px;
+  width: 12px;
+  height: 12px;
+  display: block;
+
+}
+.onepage-pagination li a:before{
+  content: '';
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  background: rgba(0,0,0,0.2);
+  @include border-radius(6px);
+}
+
+.onepage-pagination li a.active:before{
+  width: 12px;
+  height: 12px;
+  background: $cBlancoDark;
+  @include box-shadow();
+}

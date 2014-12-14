@@ -1,0 +1,38 @@
+---
+layout: default
+---
+
+<div id="main">
+  <section id="game-individual" class="dots-esmeralda">
+     <div class="mobile"><div class="gameWindow cyan"> </div></div>
+    <div class="barra dots-cyan h1"></div>
+    <div class="barra dots-rojo h2"></div>
+    <div class="barra dots-amarillo h2"></div>
+      <div id="game-icon" class="white " >
+	<img src="images/games/numbers_icon.svg"  />
+      </div>
+    <div  id="game-content">
+	<div class="col-xs-offset-1 col-sm-offset-1  col-md-offset-1  col-lg-offset-1 col-xs-10 col-sm-3 col-md-3 col-lg-3">
+	<h1>{{ page.title }}</h1>
+	    <dl class="">
+		<dt>Category</dt>
+		<dd>{{ page.game_category }}</dd>
+		<dt>Launch date</dt>
+		<dd>01/11/14</dd>
+		<dt>Platforms</dt>
+		<dd>{{ page.game_platforms }}</dd>
+	    </dl>
+	    
+	</div>
+	<div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 text-right">
+		<br>
+		{% if page.game_google_play_link %}<a href="{{ page.game_google_play_link }}" rel="nofollow"><img src="images/stores/google-play.png" alt="Google Play Store" height="50" /></a>{% endif %}
+		{% if page.game_itunes_link %}<a href="{{ page.game_itunes_link }}" rel="nofollow"><img src="images/stores/Download_on_iTunes_Badge_US-UK_110x40_1004.png" alt="Apple App Store" height="50" /></a>{% endif %}
+		{% if page.game_chrome_webstore_link %}<a href="{{ page.game_chrome_webstore_link }}" rel="nofollow"><img src="images/stores/ChromeWebStore_BadgeWBorder_v2_206x58.png" alt="Chrome Webstore" height="50" /></a>{% endif %}
+	</div>
+       
+
+    </div>
+  </section>
+</div>
+
