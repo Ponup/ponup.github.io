@@ -19,30 +19,22 @@ layout: default
     <div class="container text-center ">
       <div class="col-xs-6 col-sm-3 col-md-3 col-lg-3 ">
         <ul class="app-icons ">
-          <li class="white " data-name="Numbers" data-platform="Web" data-alias="numbers">
-	  <a href="numbers.html"><img src="images/games/numbers_icon.svg"  /></a>
-          </li>
-          <li class="green" data-name="Viajero" data-platform="Desktop" data-alias="viajero">
-            <img src="images/games/viajero_icon.svg"  />
-          </li>
-          <li class="black" data-name="ThiefCatcher" data-platform="Desktop" data-alias="thief-catcher" >
-	  <a href="thief-catcher.html"><img src="images/games/thief_icon.svg" alt="" /></a>
-          </li>
-          <li class="tomate" data-name="Reciclaje" data-platform="Web" data-alias="reciclaje">
-	  <a href="reciclaje.html"><img src="images/games/areciclar_icon.svg" /></a>
-          </li>
-          <li class="red hidden" data-name="TetrisKit" data-platform="Desktop" data-alias="tetriskit">Tetris Kit</li>
-          <li class="cyan hidden" data-name="TetrisKit" data-platform="Desktop" data-alias="tetriskit">Letters</li>
+		{% for game in site.data.games %}
+		<li class="white " data-name="{{ game.name }}" data-platform="{{ game.platform }}" data-alias="{{ game.alias }}">
+		<a href="{{ game.alias }}.html"><img src="images/games/icon_{{ game.alias }}.png" alt="{{ game.name }}" /></a>
+			</li>
+			{{ game.name }}
+		{% endfor %}
         </ul>
       </div>
       <div class="hidden-xs col-sm-4 col-md-4 col-lg-4 ">
         <div class="gameInfo ">
-          <h1>Numbers</h1>
+          <h1>Click a game on the left</h1>
           <dl>
             <dt>Platform</dt>
-            <dd id="platformValue">Web</dd>
+            <dd id="platformValue">-</dd>
             <dt>Status</dt>
-            <dd>Published</dd>
+            <dd>-</dd>
           </dl>
         </div>
       </div>
@@ -69,21 +61,17 @@ layout: default
     </div>
   </section>
 
-
-  <section id="footer" class="dots-verde">
-    <div class="container text-center">
-
-      <div class="col-xs-12 col-sm-12 col-md-12">
-      	<ul class="footer-links">
-        	<li><a href="http://facebook.com/Ponup" rel="nofollow"><img src="images/socialmedia/facebook.png" /></a></li>
-        	<li><a href="http://twitter.com/Ponup" rel="nofollow"><img src="images/socialmedia/twitter.png" /></a></li>
-        	<li><a href="https://plus.google.com/+Ponup" rel="publisher nofollow"><img src="images/socialmedia/googleplus.png" /></a></li>
-        	<li><a href="https://www.linkedin.com/company/ponup" rel="publisher nofollow"><img src="images/socialmedia/linkedin.png" /></a></li>
-        	<li><a href="http://blog.ponup.com" rel="nofollow"><img src="images/socialmedia/rss.png" /></a></li>
-        </ul>
-      </div>
-    </div>
-  </section>
+	<section id="footer" class="dots-verde">
+		<div class="container text-center">
+		<ul class="footer-links">
+			<li><a href="http://facebook.com/Ponup" rel="nofollow"><img src="images/socialmedia/facebook.png" alt="Facebook" /></a></li>
+			<li><a href="http://twitter.com/Ponup" rel="nofollow"><img src="images/socialmedia/twitter.png" alt="Twitter" /></a></li>
+			<li><a href="https://plus.google.com/+Ponup" rel="publisher nofollow"><img src="images/socialmedia/googleplus.png" alt="GooglePlus" /></a></li>
+			<li><a href="https://www.linkedin.com/company/ponup" rel="nofollow"><img src="images/socialmedia/linkedin.png" alt="Linkedin" /></a></li>
+			<li><a href="http://blog.ponup.com" rel="nofollow"><img src="images/socialmedia/rss.png" alt="Blog" /></a></li>
+		</ul>
+		</div>
+	</section>
 
 </div>
 

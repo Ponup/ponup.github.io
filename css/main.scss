@@ -363,7 +363,9 @@ body.viewing-page-4 {
 
 }
 #footer {
-  .container,div[class*="col-"] { height: 100%; }
+   .container {
+	ul { margin-top: 15%; }
+}
   .footer-links {
     list-style: none;
     list-style-type: none;
