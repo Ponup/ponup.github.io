@@ -9,7 +9,7 @@ layout: default
     <div class="barra dots-rojo h2"></div>
     <div class="barra dots-amarillo h2"></div>
       <div id="game-icon" class="white " >
-	<img src="images/games/numbers_icon.svg"  />
+	<img src="{{ page.icon_url }}"  />
       </div>
     <div  id="game-content">
 	<div class="col-xs-offset-1 col-sm-offset-1  col-md-offset-1  col-lg-offset-1 col-xs-10 col-sm-3 col-md-3 col-lg-3">
@@ -17,8 +17,10 @@ layout: default
 	    <dl class="">
 		<dt>Category</dt>
 		<dd>{{ page.game_category }}</dd>
+		{% if page.launch_date %}
 		<dt>Launch date</dt>
-		<dd>01/11/14</dd>
+		<dd>{{ page.launch_date }}</dd>
+		{% endif %}
 		<dt>Platforms</dt>
 		<dd>{{ page.game_platforms }}</dd>
 	    </dl>

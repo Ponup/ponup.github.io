@@ -5,6 +5,11 @@
 		"platform": "Web and Mobile"
 	},
 	{
+		"alias": "salmon",
+		"name": "Salmon",
+		"platform": "Web and Mobile"
+	},
+	{
 		"alias": "viajero",
 		"name": "Viajero",
 		"platform": "Desktop"

@@ -345,21 +345,21 @@ body.viewing-page-4 {
       @include opacity(.9);
       &:hover {
         top:-3px;
-        cursor: pointer;
         @include opacity(1);
         @include box-shadow(0 6px 0 rgba(0,0,0,.2));
         @include transform(scale(1.1));
       }
-      span {
+      a {
+	color: #333;
         position:relative;
         bottom:-110px;
 
       }
     }
   }
-  #pablo{     background: url('../images/us/pablo.jpg') center center no-repeat ;}
-  #anna{      background: url('../images/us/anna.jpg') center center no-repeat ;}
-  #santiago{  background: url('../images/us/santiago.jpg') center center no-repeat ;}
+  #pablo{ background: url('../images/us/pablo.jpg') center center no-repeat ;}
+  #anna{ background: url('../images/us/anna.jpg') center center no-repeat ;}
+  #santiago{ background: url('../images/us/santiago.jpg') center center no-repeat ;}
 
 }
 #footer {
