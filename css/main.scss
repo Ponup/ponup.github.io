@@ -388,6 +388,17 @@ body.viewing-page-4 {
     }
 
   }
+  p#boringLinks {
+	  position: absolute;
+	  bottom: 0px;
+	  left: 0px;
+	  right: 0px;
+	  a, a:visited, a:link, a:active, a:hover, p {
+		  color: #224000;
+		  font-size: x-large;
+		  text-decoration: none;
+	  }
+  }
 }
 
 
