@@ -16,7 +16,7 @@ html, body {
     color: $cBlanco;
     height: 100%;
     margin: 0;
-      overflow: hidden;
+      /*overflow: hidden;*/
   -webkit-transition: opacity 400ms;
   -moz-transition: opacity 400ms;
   transition: opacity 400ms;
@@ -381,8 +381,11 @@ body.viewing-page-4 {
       margin: 4%;
       @include transition();
     @include opacity(.9);
+    img {
+        width: 80px;
+    }
       &:hover {
-        @include transform(scale(1.5));
+        @include transform(scale(1.3));
         @include opacity(1);
       }
     }
@@ -393,9 +396,13 @@ body.viewing-page-4 {
 	  bottom: 0px;
 	  left: 0px;
 	  right: 0px;
+      font-size: x-large;
+      color: white;
 	  a, a:visited, a:link, a:active, a:hover, p {
 		  color: #224000;
 		  font-size: x-large;
+          font-weight: bold;
+          font-family: 'Fredoka';
 		  text-decoration: none;
 	  }
   }
@@ -512,3 +519,14 @@ body.disabled-onepage-scroll, .disabled-onepage-scroll .onepage-wrapper, html {
   background: $cBlancoDark;
   @include box-shadow();
 }
+
+a.go-back, a.go-back:hover {
+    text-decoration: none;
+    font-weight: normal;
+    position: relative;
+    color: #fff;
+    padding: 40px;
+    margin: 10px;
+    font-family: 'Fredoka One';
+}
+
