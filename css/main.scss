@@ -13,13 +13,18 @@
 
 /* Space out content a bit */
 html, body {
-    color: $cBlanco;
+    font-family:'Fredoka One', 'Fredoka';
+    color: #424A54;
     height: 100%;
     margin: 0;
-      /*overflow: hidden;*/
-  -webkit-transition: opacity 400ms;
-  -moz-transition: opacity 400ms;
-  transition: opacity 400ms;
+    /*overflow: hidden;*/
+    -webkit-transition: opacity 400ms;
+    -moz-transition: opacity 400ms;
+    transition: opacity 400ms;
+}
+
+a, a:hover, a:active, a:visited {
+    color: #424A54;
 }
 
 
@@ -48,9 +53,6 @@ body, .onepage-wrapper, html {
 .dots-verde {@include dots($cVerde, $cVerdeDark); }
 
 // Typo
-h1,h2,h3,h4,h5,h6, strong { font-family: 'Fredoka One', cursive; }
-
-small { font-family: 'Damion', cursive; }
 #move_down {
   position: fixed;
   bottom:-100px;
@@ -310,10 +312,8 @@ body.viewing-page-4 {
       width:75%;
       height: 100px;
       font-size: 1.7em;
-      font-family: Damion, "Damion";
     }
     .lead {
-      font-family:'Fredoka One', 'Fredoka';
       font-size: 1em;
       margin-bottom: 0px;
       display: block;
@@ -338,7 +338,6 @@ body.viewing-page-4 {
       top:0px;
       position:relative;
       @include transition();
-      font-family:'Fredoka One', 'Fredoka';
       font-size: 1.2em;
       padding: 15px;
       background-size:contain;
@@ -350,7 +349,6 @@ body.viewing-page-4 {
         @include transform(scale(1.1));
       }
       a {
-	color: #333;
         position:relative;
         bottom:-110px;
 
@@ -399,10 +397,8 @@ body.viewing-page-4 {
       font-size: x-large;
       color: white;
 	  a, a:visited, a:link, a:active, a:hover, p {
-		  color: #224000;
 		  font-size: x-large;
           font-weight: bold;
-          font-family: 'Fredoka';
 		  text-decoration: none;
 	  }
   }
@@ -524,9 +520,7 @@ a.go-back, a.go-back:hover {
     text-decoration: none;
     font-weight: normal;
     position: relative;
-    color: #fff;
     padding: 40px;
     margin: 10px;
-    font-family: 'Fredoka One';
 }
 

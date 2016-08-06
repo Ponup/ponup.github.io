@@ -10,35 +10,25 @@ layout: default
 <div id="main">
   <section id="home" class="dots-esmeralda">
     <div id="LogoPonupGroup">
-       <img src="images/PonupLogoComplete.svg" id="logo"  /> <!-- will be converted to path/to/file.png if browser doesn't support SVGs  -->
+       <img src="images/PonupLogoComplete.svg" id="logo" />
     </div>
 
   </section>
 
   <section id="games" class="dots-amarillo">
-    <div class="container text-center ">
-      <div class="col-xs-6 col-sm-3 col-md-3 col-lg-3 ">
-        <ul class="app-icons ">
-		{% for game in site.data.games %}
-		<li class="white " data-name="{{ game.name }}" data-platform="{{ game.platform }}" data-alias="{{ game.alias }}">
-		<a href="{{ game.alias }}.html"><img src="images/games/icon_{{ game.alias }}.png" alt="{{ game.name }}" /></a>
-			</li>
-			{{ game.name }}
-		{% endfor %}
-        </ul>
-      </div>
-      <div class="hidden-xs col-sm-4 col-md-4 col-lg-4 ">
-        <div class="gameInfo ">
-          <h1>Click a game on the left</h1>
-          <dl>
-            <dt>Platform</dt>
-            <dd id="platformValue">-</dd>
-          </dl>
-        </div>
-      </div>
-
-      <div class="hidden-xs col-sm-5 col-md-5 col-lg-5 ">
-        <div class="mobile"><div class="gameWindow cyan"> </div></div>
+    <div class="container text-center">
+      <div class="col-md-12">
+          <h1>Our games</h1>
+          <p>Find some of our titles in the stores below:</p>
+          <p><a href='https://play.google.com/store/apps/dev?id=6635437014501599994&hl=en_GB&utm_source=global_co&utm_medium=prtnr&utm_content=Mar2515&utm_campaign=PartBadge&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1' rel="nofollow"><img alt='Get it on Google Play' src='https://play.google.com/intl/en_gb/badges/images/generic/en_badge_web_generic.png' style="width: 300px;" /></a></p>
+          <p><a href='https://www.microsoft.com/store/apps/9NBLGGH4TRGX' rel="nofollow"><img alt='Get it on Microsoft Store' src='/images/stores/microsoft-store.png' style="width: 300px;" /></a></p>
+          <p><a href='https://chrome.google.com/webstore/search/Ponup' rel="nofollow"><img alt='Get it on Google Chrome Store' src='/images/stores/ChromeWebStore_BadgeWBorder_v2_206x58.png' style="width: 300px;" /></a></p>
+          <h1>Our mission</h1>
+          <ul>
+              <li>Create fun games that <strong>don't need instructions</strong></li>
+          <li>Make them accessible <strong>low prices and multiple platforms</strong></li>
+          <li>Share our knowledge <strong>make it open</strong></li>
+          </ul>
       </div>
     </div>
   </section>
@@ -46,21 +36,22 @@ layout: default
   <section id="about" class="dots-rojo">
     <div class="container text-center">
         <div class="col-xs-12 col-sm-12 col-md-12">
+          <h1>The team</h1>
+
+          <p class="hidden-xs"><span class="lead">Ponup is an indie videogame development company formed by a young team of digital professionals looking to create the next big fun thing.</span><br>
+
           <ul id="about-faces">
             <li id="anna"><a href="#" title="Anna">Anna</a></li>
             <li id="santiago"><a href="#" title="Santiago">Santiago</a></li>
             <li id="pablo"><a href="#" title="Pablo">Pablo</a></li>
           </ul>
-          <p class="hidden-xs"><span class="lead">Ponup is an indie videogame development company with offices in Argentina and the UK. A young team of digital professionals looking to create the next big fun thing.</span><br>
-            Create fun games that don't need instructions<br>
-             Make them accessible low prices and multiple platforms<br>
-             Share our knowledge make it open</p>
       </div>
     </div>
   </section>
 
 	<section id="footer" class="dots-verde">
 		<div class="container text-center">
+            <h1>Social <small>and then boring links</small></h1>
 			<ul class="footer-links">
 				<li><a href="http://facebook.com/Ponup" rel="nofollow"><img src="images/socialmedia/facebook.png" alt="Facebook" /></a></li>
 				<li><a href="http://twitter.com/Ponup" rel="nofollow"><img src="images/socialmedia/twitter.png" alt="Twitter" /></a></li>
