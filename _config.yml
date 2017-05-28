@@ -1,9 +1,75 @@
-# Site settings
-title: Ponup Games 
-description: Ponup Games is an indie development company with games published for all platforms (mobile + desktop ).
-baseurl: ""
-url: "http://ponup.com"
+title: Ponup
+url: "https://ponup.com"
+baseurl:
+google_analytics_key: UA-55086782-1
+google_maps_javascript_api_key:
+disqus_shortname:
 
-# Build settings
-markdown: kramdown
+# Default description in social shares for the jekyll-seo-tag gem
+description: Ponup Games is an indie development company with games published for all platforms (mobile + desktop ).
+
+# Author details for the jekyll-seo-tag gem
+author:
+  name:
+  email:
+  twitter: # twitter username without the @ symbol
+
+# Social details for the jekyll-seo-tag gem
+social:
+  name: Ponup Games
+  links:
+    - https://github.com/Ponup
+
+collections:
+  staff_members:
+    output: false
+  clients:
+    output: true
+
+paginate: 10
+paginate_path: "/blog/:num/"
+permalink: pretty
+
+jekyll-archives:
+  enabled:
+    - "categories"
+
+gems:
+  - "jekyll-feed"
+  - "jekyll-seo-tag"
+  - "jekyll-paginate"
+  - "jekyll-archives"
+
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+  - scope:
+      path: ""
+      type: "clients"
+    values:
+      layout: "client"
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "page"
+  - scope:
+      path: "index.html"
+      type: "pages"
+    values:
+      layout: "default"
+
+social_icons:
+  - Facebook
+  - Google Plus
+  - Instagram
+  - LinkedIn
+  - Pinterest
+  - Tumblr
+  - Twitter
+  - YouTube
+  - RSS
 

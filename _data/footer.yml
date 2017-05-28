@@ -1,0 +1,30 @@
+- title: Pages
+  links:
+    - name: Home
+      link: /
+    - name: Contact
+      link: https://docs.google.com/forms/d/e/1FAIpQLSfg3RY2TE5eMsYpp3GXs-JMg416smhOOh7PSwUqoEmgmdh_lw/viewform?c=0&w=1
+    - name: Blog
+      link: http://blog.ponup.com
+    - name: Privacy Policy
+      link: /privacy-policy/
+    - name: Leadeboard
+      link: http://leaderboard.ponup.com/
+- title: Social
+  links:
+    - name: Facebook
+      link: https://facebook.com/Ponup
+      social_icon: Facebook
+      new_window: true
+    - name: Twitter
+      link: https://twitter.com/Ponup
+      social_icon: Twitter
+      new_window: true
+    - name: Google+
+      link: https://plus.google.com/+Ponup
+      social_icon: Google Plus
+      new_window: true
+    - name: LinkedIn
+      link: https://linkedin.com/company/Ponup
+      social_icon: LinkedIn
+      new_window: true

@@ -1,68 +1,42 @@
 ---
-layout: default
+title: Games 
 ---
 
-<script src="/scripts/jquery.onepage-scroll.min.js"></script>
-<script src="/scripts/main.js"></script>
+<section class="hero diagonal">
+	<div class="container">
+		<h2 class="editable">We build fun stuff</h2>
+		<p class="subtext editable"><strong>Ponup</strong> is an indie development company looking to make different things differently.</p>
+		<p><a class="button alt" href="{{ site.baseurl }}/portfolio/">View our portfolio</a></p>
+	</div>
+</section>
 
-<div id="move_down"></div>
-
-<div id="main">
-  <section id="home" class="dots-esmeralda">
-    <div id="LogoPonupGroup">
-       <img src="images/PonupLogoComplete.svg" id="logo" />
-    </div>
-
-  </section>
-
-  <section id="games" class="dots-amarillo">
-    <div class="container text-center">
-      <div class="col-md-12">
-          <h1>Our games</h1>
-          <p>Find some of our titles in the stores below:</p>
-          <p><a href='https://play.google.com/store/apps/dev?id=6635437014501599994&hl=en_GB&utm_source=global_co&utm_medium=prtnr&utm_content=Mar2515&utm_campaign=PartBadge&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1' rel="nofollow"><img alt='Get it on Google Play' src='https://play.google.com/intl/en_gb/badges/images/generic/en_badge_web_generic.png' style="width: 300px;" /></a></p>
-          <p><a href='https://www.microsoft.com/store/apps/9NBLGGH4TRGX' rel="nofollow"><img alt='Get it on Microsoft Store' src='/images/stores/microsoft-store.png' style="width: 300px;" /></a></p>
-          <p><a href='https://chrome.google.com/webstore/search/Ponup' rel="nofollow"><img alt='Get it on Google Chrome Store' src='/images/stores/ChromeWebStore_BadgeWBorder_v2_206x58.png' style="width: 300px;" /></a></p>
-          <h1>Our mission</h1>
-          <ul>
-              <li>Create fun games that <strong>don't need instructions</strong></li>
-          <li>Make them accessible <strong>low prices and multiple platforms</strong></li>
-          <li>Share our knowledge <strong>make it open</strong></li>
-          </ul>
-      </div>
-    </div>
-  </section>
-
-  <section id="about" class="dots-rojo">
-    <div class="container text-center">
-        <div class="col-xs-12 col-sm-12 col-md-12">
-          <h1>The team</h1>
-
-          <p class="hidden-xs"><span class="lead">Ponup is an indie videogame development company formed by a young team of digital professionals looking to create the next big fun thing.</span><br>
-
-          <ul id="about-faces">
-            <li id="anna"><a href="#" title="Anna">Anna</a></li>
-            <li id="santiago"><a href="#" title="Santiago">Santiago</a></li>
-            <li id="pablo"><a href="#" title="Pablo">Pablo</a></li>
-          </ul>
-      </div>
-    </div>
-  </section>
-
-	<section id="footer" class="dots-verde">
-		<div class="container text-center">
-            <h1>Social <small>and then boring links</small></h1>
-			<ul class="footer-links">
-				<li><a href="http://facebook.com/Ponup" rel="nofollow"><img src="images/socialmedia/facebook.png" alt="Facebook" /></a></li>
-				<li><a href="http://twitter.com/Ponup" rel="nofollow"><img src="images/socialmedia/twitter.png" alt="Twitter" /></a></li>
-				<li><a href="https://plus.google.com/+Ponup" rel="publisher nofollow"><img src="images/socialmedia/googleplus.png" alt="GooglePlus" /></a></li>
-				<li><a href="https://www.linkedin.com/company/ponup" rel="nofollow"><img src="images/socialmedia/linkedin.png" alt="Linkedin" /></a></li>
-				<li><a href="http://blog.ponup.com" rel="nofollow"><img src="images/socialmedia/rss.png" alt="Blog" /></a></li>
-			</ul>
-			<p id="boringLinks">
-				<a href="http://leaderboard.ponup.com" title="Leaderboard">Leaderboard</a> &wreath; <a href="/privacy-policy.html" title="Privacy policy">Privacy policy</a> &wreath; <a href="http://goo.gl/forms/kTHpTPmVV8" title="Contact" rel="nofollow">Contact</a>
-			</p>
+<section class="diagonal patterned">
+	<div class="container halves">
+		<div>
+			<h3 class="editable">Some of our work</h3>
+			<p class="editable">We take pride in our previous work and our happy customers. We cater to any sector to boost business and increase exposure.</p>
+			<p class="editable"><a href="{{ site.baseurl }}/portfolio/">View Full Portfolio &rarr;</a></p>
 		</div>
-	</section>
-</div>
+		<div>
+			<ul class="image-grid">
+				{% for client in site.clients limit: 4 %}
+					<li><a href="{{ site.baseurl }}{{ client.url }}"><img src="{% include relative-src.html src=client.image_path %}"></a></li>
+				{% endfor %}
+			</ul>
+		</div>
+	</div>
+</section>
 
+<section class="diagonal alternate">
+	<div class="container halves">
+		<div>
+			<ul class="image-list">
+				<li><img src="{{ site.baseurl }}/images/software.png" width="300"></li>
+			</ul>
+		</div>
+		<div>
+			<h3 class="editable">Not only games</h3>
+			<p class="editable">We also develop professional apps for customers needing robust Web, mobile and desktop software.</p>
+		</div>
+	</div>
+</section>

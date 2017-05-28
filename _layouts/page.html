@@ -1,10 +1,17 @@
 ---
 layout: default
 ---
+<section class="hero diagonal">
+	<div class="container" {% if page.full_width %}style="max-width: 100%"{% endif %}>
+		{% if page.heading %}
+			<h2>{{ page.heading }}</h2>
+		{% elsif page.title %}
+			<h2>{{ page.title }}</h2>
+		{% endif %}
+		{% if page.subtitle %}
+			<p class="subtext">{{ page.subtitle }}</p>
+		{% endif %}
+	</div>
+</section>
 
-<div class="container">
-    <div class="barra dots-verde h2"><a href="/" title="Ponup Games" class="go-back">&#8604; Go back</a></div>
-    <div class="col-md-offset-2 col-md-8 col-md-offset-2">
-        {{ content }}
-    </div>
-</div>
+{{ content }}
