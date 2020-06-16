@@ -23,7 +23,7 @@ social:
 collections:
   staff_members:
     output: false
-  clients:
+  projects:
     output: true
 
 paginate: 10
@@ -48,9 +48,9 @@ defaults:
       layout: "post"
   - scope:
       path: ""
-      type: "clients"
+      type: "projects"
     values:
-      layout: "client"
+      layout: "project"
   - scope:
       path: ""
       type: "pages"

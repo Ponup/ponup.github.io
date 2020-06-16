@@ -1,7 +1,7 @@
 links:
-- name: Portfolio
-  link: /portfolio/
+- name: Projects
+  link: /projects/
 - name: Blog
-  link: http://blog.ponup.com
+  link: https://blog.ponup.com
 - name: Contact
   link: https://docs.google.com/forms/d/e/1FAIpQLSfg3RY2TE5eMsYpp3GXs-JMg416smhOOh7PSwUqoEmgmdh_lw/viewform?c=0&w=1 
